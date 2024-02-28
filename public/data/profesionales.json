@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "nombre": "Juan Pérez",
+        "especialidad": 1,
+        "horarios": [
+            {
+                "dia": "Lunes",
+                "horario": "08:00 - 09:00"
+            },
+            {
+                "dia": "Miércoles",
+                "horario": "14:00 - 15:00"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "nombre": "Roberto Funes",
+        "especialidad": 1,
+        "horarios": [
+            {
+                "dia": "Martes",
+                "horario": "17:00 - 18:00"
+            },
+            {
+                "dia": "Viernes",
+                "horario": "10:00 - 11:00"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "María González",
+        "especialidad": 2,
+        "horarios": [
+            {
+                "dia": "Martes",
+                "horario": "09:00 - 10:00"
+            },
+            {
+                "dia": "Jueves",
+                "horario": "15:00 - 16:00"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "Pablo Ramirez",
+        "especialidad": 2,
+        "horarios": [
+            {
+                "dia": "Lunes",
+                "horario": "19:00 - 20:00"
+            },
+            {
+                "dia": "Viernes",
+                "horario": "15:00 - 16:00"
+            }
+        ]
+    }
+]

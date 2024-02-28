@@ -7,4 +7,20 @@
     img{
         margin-left: 20px;
     }
+    li {
+        a {
+            color: #FFF; 
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 15px;
+            margin-right: 10px;
+
+            &:hover,
+            &:focus {
+                color: #000; 
+                background-color: transparent; 
+                border-radius: 5px; 
+            }
+        }
+    }
 }

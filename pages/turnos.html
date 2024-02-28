@@ -1,0 +1,53 @@
+<ng-include src="'../pages/partials/navbar.html'"></ng-include>
+<div class="container turnos">
+    <h2 class="text-center">Aca irian los turnos</h2>
+    <div ng-show="mostrarFormulario">
+        <h2>Solicitar Turno</h2>
+        <form ng-submit="solicitarTurno()">
+            <div>
+                <label for="especialidad">Especialidad:</label>
+                <select id="especialidad" ng-model="selectedEspecialidad" ng-options="especialidad as especialidad.especialidad for especialidad in especialidades" ng-change="seleccionarEspecialidad()">
+                    <option value="">Selecciona una especialidad</option>
+                </select>
+            </div>
+            <div ng-show="mostrarHorarios">
+                <label for="profesional">Profesional:</label>
+                <select id="profesional" ng-model="selectedProfesional" ng-options="profesional as profesional.nombre for profesional in profesionales" ng-disabled="!selectedEspecialidad">
+                    <option value="">Selecciona un profesional</option>
+                </select>
+            </div>
+            <div ng-if="mostrarHorarios && selectedProfesional">
+                <label for="horario">Horario:</label>
+                <div ng-repeat="horario in selectedProfesional.horarios">
+                    <input type="checkbox" id="{{horario.dia}}" ng-model="selectedHorarios[horario.dia]" ng-change="seleccionarHorario(horario)">
+                    <label for="{{horario.dia}}">{{horario.dia}} - {{horario.horario}}</label>
+                </div>
+            </div>
+            <div ng-if="mostrarCampos">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" ng-model="nombre" ng-disabled="!selectedHorarios" required>
+            </div>
+            <div ng-if="mostrarCampos">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" ng-model="apellido" ng-disabled="!selectedHorarios" required>
+            </div>
+            <div ng-if="mostrarCampos">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" ng-model="direccion" ng-disabled="!selectedHorarios" required>
+            </div>
+            <div ng-if="mostrarCampos">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" ng-model="telefono" ng-disabled="!selectedHorarios" required>
+            </div>
+            <div ng-if="mostrarCampos">
+                <label for="comentario">Comentario (opcional):</label>
+                <textarea id="comentario" ng-model="comentario" ng-disabled="!selectedHorarios"></textarea>
+            </div>
+            <button type="submit" ng-disabled="!selectedHorarios || formulario.$invalid">Solicitar Turno</button>
+        </form>
+    </div>
+    <div ng-show="!mostrarFormulario" class="resultado-solicitud">
+      <p>{{resultado.mensaje}}</p>
+  </div>
+</div>
+<ng-include src="'../pages/partials/footer.html'"></ng-include>

@@ -1,1 +1,21 @@
 $main_color: #2d56ff;
+
+.resultado-solicitud {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.resultado-solicitud h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.resultado-solicitud p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
